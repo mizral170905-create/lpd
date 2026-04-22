@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Desa Makmur Jaya - Layanan Publik Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo-area">
+                        <div class="logo-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>Desa Makmur Jaya</h1>
+                            <p>Layanan Publik Online</p>
+                        </div>
+                    </div>
+                    
+                    <!-- User Area -->
+                    <div class="user-area" id="userArea">
+                        <div class="user-greeting">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="userNameDisplay">Tamu</span>
+                        </div>
+                        <button class="btn-user-edit" id="editUserNameBtn">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="layanan.html"><i class="fas fa-list-alt"></i> Layanan</a></li>
+                        <li><a href="formulir.html"><i class="fas fa-file-alt"></i> Formulir</a></li>
+                        <li><a href="status.html"><i class="fas fa-chart-line"></i> Status</a></li>
+                        <li><a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Selamat Datang di Layanan Publik Online</h2>
+                        <p>Desa Makmur Jaya hadir untuk memberikan kemudahan dalam mengurus berbagai surat menyurat secara online. Tanpa antri, cepat, dan transparan.</p>
+                        <div class="hero-buttons">
+                            <a href="formulir.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Ajukan Sekarang</a>
+                            <a href="layanan.html" class="btn btn-outline"><i class="fas fa-info-circle"></i> Lihat Layanan</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Statistics Section -->
+            <section class="statistics">
+                <div class="container">
+                    <div class="stats-grid" id="statsGrid">
+                        <div class="stat-card">
+                            <i class="fas fa-file-alt"></i>
+                            <div class="stat-number" id="totalPengajuan">0</div>
+                            <div class="stat-label">Surat Terproses</div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-server"></i>
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Layanan Aktif</div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-smile"></i>
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Kepuasan Masyarakat</div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Layanan Online</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Featured Services -->
+            <section class="featured-services">
+                <div class="container">
+                    <div class="section-header">
+                        <h3>Layanan Unggulan</h3>
+                        <p>Layanan paling sering diajukan oleh warga Desa Makmur Jaya</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h4>Pembuatan KTP</h4>
+                            <p>Pengajuan Kartu Tanda Penduduk elektronik untuk warga 17 tahun ke atas</p>
+                            <div class="service-meta">
+                                <span><i class="far fa-clock"></i> 3 hari kerja</span>
+                            </div>
+                            <a href="formulir.html?jenis=KTP" class="btn btn-sm btn-primary">Ajukan</a>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Pembuatan KK</h4>
+                            <p>Kartu Keluarga baru atau perubahan data keluarga</p>
+                            <div class="service-meta">
+                                <span><i class="far fa-clock"></i> 2 hari kerja</span>
+                            </div>
+                            <a href="formulir.html?jenis=KK" class="btn btn-sm btn-primary">Ajukan</a>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h4>Akta Kelahiran</h4>
+                            <p>Pencatatan kelahiran untuk anak usia 0-60 hari</p>
+                            <div class="service-meta">
+                                <span><i class="far fa-clock"></i> 5 hari kerja</span>
+                            </div>
+                            <a href="formulir.html?jenis=Akta Kelahiran" class="btn btn-sm btn-primary">Ajukan</a>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-truck-moving"></i>
+                            </div>
+                            <h4>Surat Pindah</h4>
+                            <p>Pengurusan surat keterangan pindah penduduk</p>
+                            <div class="service-meta">
+                                <span><i class="far fa-clock"></i> 1 hari kerja</span>
+                            </div>
+                            <a href="formulir.html?jenis=Surat Pindah" class="btn btn-sm btn-primary">Ajukan</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <h4>Desa Makmur Jaya</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Desa No. 123, Kecamatan Sejahtera, Kabupaten Bahagia</p>
+                        <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                        <p><i class="fas fa-envelope"></i> desa@makmurjaya.go.id</p>
+                    </div>
+                    <div class="footer-hours">
+                        <h4>Jam Layanan</h4>
+                        <p>Senin - Jumat: 08.00 - 15.00 WIB</p>
+                        <p>Sabtu: 08.00 - 12.00 WIB</p>
+                        <p>Minggu & Hari Libur: Tutup</p>
+                        <p class="online-note"><i class="fas fa-globe"></i> Online: 24 jam</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Tautan Cepat</h4>
+                        <ul>
+                            <li><a href="index.html">Beranda</a></li>
+                            <li><a href="layanan.html">Layanan</a></li>
+                            <li><a href="formulir.html">Formulir</a></li>
+                            <li><a href="status.html">Cek Status</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Desa Makmur Jaya. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Modal for User Name Input -->
+    <div class="modal" id="userNameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Masukkan Nama Anda</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="userNameInput" placeholder="Nama lengkap" maxlength="50">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="saveUserNameBtn">Simpan</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

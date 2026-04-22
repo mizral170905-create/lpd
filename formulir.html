@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Formulir Pengajuan - Desa Makmur Jaya</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo-area">
+                        <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="logo-text">
+                            <h1>Desa Makmur Jaya</h1>
+                            <p>Layanan Publik Online</p>
+                        </div>
+                    </div>
+                    <div class="user-area">
+                        <div class="user-greeting"><i class="fas fa-user-circle"></i><span id="userNameDisplay">Tamu</span></div>
+                        <button class="btn-user-edit" id="editUserNameBtn"><i class="fas fa-pen"></i></button>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="layanan.html"><i class="fas fa-list-alt"></i> Layanan</a></li>
+                        <li><a href="formulir.html" class="active"><i class="fas fa-file-alt"></i> Formulir</a></li>
+                        <li><a href="status.html"><i class="fas fa-chart-line"></i> Status</a></li>
+                        <li><a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <div class="container">
+                <div class="page-header">
+                    <h2>Formulir Pengajuan Surat</h2>
+                    <p>Isi data dengan lengkap dan benar</p>
+                </div>
+                
+                <!-- Multi-step Form -->
+                <div class="form-container">
+                    <div class="step-indicator">
+                        <div class="step active" data-step="1">1. Pilih Surat</div>
+                        <div class="step" data-step="2">2. Data Diri</div>
+                        <div class="step" data-step="3">3. Upload Dokumen</div>
+                        <div class="step" data-step="4">4. Konfirmasi</div>
+                    </div>
+                    
+                    <form id="pengajuanForm">
+                        <!-- Step 1 -->
+                        <div class="form-step" id="step1">
+                            <h3>Pilih Jenis Surat</h3>
+                            <div class="form-group">
+                                <label>Jenis Surat *</label>
+                                <select id="jenisSurat" required>
+                                    <option value="">Pilih jenis surat</option>
+                                    <option value="KTP">KTP (Kartu Tanda Penduduk)</option>
+                                    <option value="KK">KK (Kartu Keluarga)</option>
+                                    <option value="Akta Kelahiran">Akta Kelahiran</option>
+                                    <option value="Surat Kematian">Surat Kematian</option>
+                                    <option value="Surat Pindah">Surat Pindah</option>
+                                    <option value="Surat Domisili">Surat Domisili</option>
+                                    <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
+                                    <option value="Surat Pengantar RT/RW">Surat Pengantar RT/RW</option>
+                                </select>
+                                <span class="error-message" id="errorJenisSurat"></span>
+                            </div>
+                            <button type="button" class="btn btn-primary next-step">Selanjutnya</button>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="form-step" id="step2" style="display:none;">
+                            <h3>Data Diri Pemohon</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>NIK (16 digit) *</label>
+                                    <input type="text" id="nik" maxlength="16" placeholder="3273000000000000">
+                                    <span class="error-message" id="errorNik"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nama Lengkap *</label>
+                                    <input type="text" id="namaLengkap" placeholder="Nama sesuai KTP">
+                                    <span class="error-message" id="errorNama"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Tempat Lahir *</label>
+                                    <input type="text" id="tempatLahir" placeholder="Contoh: Jakarta">
+                                    <span class="error-message" id="errorTempatLahir"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal Lahir *</label>
+                                    <input type="date" id="tanggalLahir">
+                                    <span class="error-message" id="errorTanggalLahir"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Jenis Kelamin *</label>
+                                    <select id="jenisKelamin">
+                                        <option value="">Pilih</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                    <span class="error-message" id="errorJenisKelamin"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>RT/RW *</label>
+                                    <input type="text" id="rtRw" placeholder="Contoh: 001/002">
+                                    <span class="error-message" id="errorRtRw"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat Lengkap *</label>
+                                <textarea id="alamat" rows="2" placeholder="Alamat lengkap sesuai KTP"></textarea>
+                                <span class="error-message" id="errorAlamat"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nomor HP *</label>
+                                    <input type="tel" id="noHp" placeholder="081234567890">
+                                    <span class="error-message" id="ErrorNoHp"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email (Opsional)</label>
+                                    <input type="email" id="email" placeholder="email@contoh.com">
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Kembali</button>
+                                <button type="button" class="btn btn-primary next-step">Selanjutnya</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="form-step" id="step3" style="display:none;">
+                            <h3>Upload Dokumen Pendukung</h3>
+                            <div class="upload-area" id="uploadArea">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Klik atau seret file ke sini</p>
+                                <input type="file" id="fileUpload" accept=".jpg,.jpeg,.png,.pdf" style="display:none;">
+                                <button type="button" class="btn btn-outline btn-sm" id="uploadBtn">Pilih File</button>
+                            </div>
+                            <div id="uploadedFiles"></div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Kembali</button>
+                                <button type="button" class="btn btn-primary next-step">Selanjutnya</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="form-step" id="step4" style="display:none;">
+                            <h3>Konfirmasi Data</h3>
+                            <div class="summary-card" id="summaryData"></div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Kembali</button>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Kirim Pengajuan</button>
+                                <button type="button" class="btn btn-secondary" id="saveDraftBtn">Simpan Sementara</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <h4>Desa Makmur Jaya</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Desa No. 123, Kecamatan Sejahtera, Kabupaten Bahagia</p>
+                    </div>
+                    <div class="footer-hours">
+                        <h4>Jam Layanan</h4>
+                        <p>Senin - Jumat: 08.00 - 15.00 WIB</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Tautan Cepat</h4>
+                        <ul><li><a href="index.html">Beranda</a></li><li><a href="layanan.html">Layanan</a></li></ul>
+                    </div>
+                </div>
+                <div class="footer-bottom"><p>&copy; 2024 Desa Makmur Jaya. All rights reserved.</p></div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Loading Spinner -->
+    <div class="loading-overlay" id="loadingOverlay" style="display:none;">
+        <div class="spinner"></div>
+        <p>Memproses...</p>
+    </div>
+    
+    <div class="modal" id="userNameModal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Masukkan Nama Anda</h3><button class="modal-close">&times;</button></div>
+            <div class="modal-body"><input type="text" id="userNameInput" placeholder="Nama lengkap"></div>
+            <div class="modal-footer"><button class="btn btn-primary" id="saveUserNameBtn">Simpan</button></div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>

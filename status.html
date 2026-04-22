@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Status Pengajuan - Desa Makmur Jaya</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo-area">
+                        <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="logo-text">
+                            <h1>Desa Makmur Jaya</h1>
+                            <p>Layanan Publik Online</p>
+                        </div>
+                    </div>
+                    <div class="user-area">
+                        <div class="user-greeting"><i class="fas fa-user-circle"></i><span id="userNameDisplay">Tamu</span></div>
+                        <button class="btn-user-edit" id="editUserNameBtn"><i class="fas fa-pen"></i></button>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="layanan.html"><i class="fas fa-list-alt"></i> Layanan</a></li>
+                        <li><a href="formulir.html"><i class="fas fa-file-alt"></i> Formulir</a></li>
+                        <li><a href="status.html" class="active"><i class="fas fa-chart-line"></i> Status</a></li>
+                        <li><a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <div class="container">
+                <div class="page-header">
+                    <h2>Cek Status Pengajuan</h2>
+                    <p>Masukkan nomor pengajuan atau NIK untuk melihat status</p>
+                </div>
+                
+                <!-- Search Form -->
+                <div class="search-card">
+                    <div class="search-form">
+                        <input type="text" id="searchInput" placeholder="Nomor Pengajuan atau NIK">
+                        <button id="searchBtn" class="btn btn-primary"><i class="fas fa-search"></i> Cari</button>
+                    </div>
+                    <button id="showAllBtn" class="btn btn-outline btn-sm"><i class="fas fa-list"></i> Tampilkan Semua</button>
+                </div>
+                
+                <!-- History Table -->
+                <div class="history-section">
+                    <h3>Riwayat Pengajuan</h3>
+                    <div class="table-responsive">
+                        <table class="history-table" id="historyTable">
+                            <thead>
+                                <tr>
+                                    <th>No. Pengajuan</th>
+                                    <th>Jenis Surat</th>
+                                    <th>Tanggal</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                                <tr><td colspan="5" class="text-center">Belum ada data pengajuan</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Detail Modal -->
+        <div class="modal" id="detailModal">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h3>Detail Pengajuan</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body" id="detailModalBody"></div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <h4>Desa Makmur Jaya</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Desa No. 123, Kecamatan Sejahtera, Kabupaten Bahagia</p>
+                    </div>
+                    <div class="footer-hours">
+                        <h4>Jam Layanan</h4>
+                        <p>Senin - Jumat: 08.00 - 15.00 WIB</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Tautan Cepat</h4>
+                        <ul><li><a href="index.html">Beranda</a></li><li><a href="formulir.html">Ajukan Surat</a></li></ul>
+                    </div>
+                </div>
+                <div class="footer-bottom"><p>&copy; 2024 Desa Makmur Jaya. All rights reserved.</p></div>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="modal" id="userNameModal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Masukkan Nama Anda</h3><button class="modal-close">&times;</button></div>
+            <div class="modal-body"><input type="text" id="userNameInput" placeholder="Nama lengkap"></div>
+            <div class="modal-footer"><button class="btn btn-primary" id="saveUserNameBtn">Simpan</button></div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
